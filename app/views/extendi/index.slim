@@ -1,0 +1,15 @@
+
+.world
+	.container
+		.row
+			.col-md-12
+				h1 count-gen="#{@generation}" == "Generation: <span>#{@generation}</span>"
+				h3 = "Rows: #{@lines} Cols: #{@cols}"
+				= render partial: 'grid'
+		.row
+			.col-md-4.col-md-offset-4
+				.row 
+					.col-md-6
+						a#generate.btn.btn-block type="button" Generate
+					.col-md-6
+						a#clear.btn.btn-block type="button" Clear

@@ -1,0 +1,10 @@
+.grid
+	table 
+		- for i in 0..(@lines - 1)
+			tr
+				- for j in 0..(@cols - 1)
+					td
+						- if  @grid and @grid[i][j] == 1
+							.cell.live row="#{i}" col="#{j}"
+						- else
+							.cell row="#{i}" col="#{j}"
