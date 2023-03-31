@@ -3,10 +3,6 @@ class ExtendiController < ApplicationController
     before_action :first_generation, only: [:index, :clear]
 
     def index
-        @generation = 1
-        @@world = World.new(@cols, @lines, @generation)
-        @@world.load @cells
-        @grid = @@world.execute
     end
 
     def generate
@@ -21,10 +17,6 @@ class ExtendiController < ApplicationController
     end
 
     def clear
-        @generation = 1
-        @@world = World.new(@cols, @lines, @generation)
-        @@world.load @cells
-        @grid = @@world.execute
     end
 
     def check_file(file)
@@ -71,5 +63,13 @@ class ExtendiController < ApplicationController
         end
 
         @cells = cells
+
+
+        @generation = 1
+        @@world = World.new(@cols, @lines, @generation)
+        @@world.load @cells
+        @grid = @@world.execute
     end 
+
+    
 end
